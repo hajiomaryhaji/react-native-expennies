@@ -1,11 +1,10 @@
 import { Stack, Redirect } from "expo-router";
-// import { useAuth } from '@clerk/expo';
+import { useAuth } from '@clerk/expo';
 import '@/global.css';
 
 export default function AuthLayout() {
-    // const { isSignedIn, isLoaded } = useAuth();
-    const isLoaded = true;
-    const isSignedIn = true;
+    const { isSignedIn, isLoaded } = useAuth();
+
 
     // Wait for auth to load before rendering anything
     if (!isLoaded) {
