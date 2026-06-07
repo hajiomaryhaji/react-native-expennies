@@ -2,7 +2,7 @@ import { SplashScreen, Stack } from "expo-router";
 import "@/global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
-import { ClerkProvider } from '@clerk/expo'
+import { ClerkProvider, useAuth } from '@clerk/expo'
 import { tokenCache } from '@clerk/expo/token-cache'
 
 
@@ -15,6 +15,8 @@ if (!publishableKey) {
 SplashScreen.preventAutoHideAsync();
 
 function RootLayoutContent() {
+    const { isLoaded: authLoaded } = useAuth();
+
     const [fontLoaded] = useFonts({
         'sans-regular': require('../assets/fonts/PlusJakartaSans-Regular.ttf'),
         'sans-bold': require('../assets/fonts/PlusJakartaSans-Bold.ttf'),
@@ -26,13 +28,13 @@ function RootLayoutContent() {
 
     useEffect(() => {
         // Hide splash only when both fonts and auth are loaded
-        if (fontLoaded) {
+        if (fontLoaded || authLoaded) {
             SplashScreen.hideAsync();
         }
-    }, [fontLoaded]);
+    }, [fontLoaded, authLoaded]);
 
     // Don't render app until both are ready
-    if (!fontLoaded) return null;
+    if (!fontLoaded || !authLoaded) return null;
 
     return <Stack screenOptions={{ headerShown: false }} />;
 }

@@ -3,6 +3,7 @@ import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context";
 import { styled } from "nativewind";
 import { useClerk, useUser } from '@clerk/expo';
 import images from '@/constants/images';
+import dayjs from 'dayjs';
 const SafeAreaView = styled(RNSafeAreaView);
 
 const Settings = () => {
@@ -26,16 +27,16 @@ const Settings = () => {
             <Text className="text-3xl font-sans-bold text-primary mb-6">Settings</Text>
 
             {/* User Profile Section */}
-            <View className="auth-card mb-5">
+            <View className="auth-card mb-3">
                 <View className="flex-row items-center gap-4 mb-4">
                     <Image
                         source={user?.imageUrl ? { uri: user.imageUrl } : images.avatar}
                         className="size-16 rounded-full"
                     />
                     <View className="flex-1">
-                        <Text className="text-lg font-sans-bold text-primary">{displayName}</Text>
+                        <Text className="text-sm font-sans-bold text-primary">{displayName}</Text>
                         {email && (
-                            <Text className="text-sm font-sans-medium text-muted-foreground">{email}</Text>
+                            <Text className="text-xs font-sans-medium text-muted-foreground">{email}</Text>
                         )}
                     </View>
                 </View>
@@ -54,7 +55,7 @@ const Settings = () => {
                     <View className="flex-row justify-between items-center py-2">
                         <Text className="text-sm font-sans-medium text-muted-foreground">Joined</Text>
                         <Text className="text-sm font-sans-medium text-primary">
-                            {user?.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'N/A'}
+                            {user?.createdAt ? dayjs(user?.createdAt).format('DD-MMM-YYYY') : 'N/A'}
                         </Text>
                     </View>
                 </View>
