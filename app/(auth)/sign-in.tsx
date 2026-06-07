@@ -34,7 +34,6 @@ const SignIn = () => {
 
         if (error) {
             console.error(JSON.stringify(error, null, 2));
-
             return;
         }
 
@@ -45,8 +44,6 @@ const SignIn = () => {
                         console.log(session?.currentTask);
                         return;
                     }
-
-
 
                     const url = decorateUrl('/(tabs)');
                     if (url.startsWith('http')) {
@@ -89,8 +86,6 @@ const SignIn = () => {
                         console.log(session?.currentTask);
                         return;
                     }
-
-
 
                     const url = decorateUrl('/(tabs)');
                     if (url.startsWith('http')) {
@@ -213,10 +208,10 @@ const SignIn = () => {
                         <View className="auth-brand-block">
                             <View className="auth-logo-wrap">
                                 <View className="auth-logo-mark">
-                                    <Text className="auth-logo-mark-text">E</Text>
+                                    <Text className="auth-logo-mark-text">R</Text>
                                 </View>
                                 <View>
-                                    <Text className="auth-wordmark">Expennies</Text>
+                                    <Text className="auth-wordmark">Recurrly</Text>
                                     <Text className="auth-wordmark-sub">SUBSCRIPTIONS</Text>
                                 </View>
                             </View>

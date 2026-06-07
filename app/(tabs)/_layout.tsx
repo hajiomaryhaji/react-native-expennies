@@ -21,8 +21,6 @@ const TabLayout = () => {
 
     const insets = useSafeAreaInsets();
 
-
-
     // Wait for auth to load before rendering anything
     if (!isLoaded) {
         return null;

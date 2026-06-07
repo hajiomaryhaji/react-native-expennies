@@ -35,7 +35,7 @@ const SignUp = () => {
 
         if (error) {
             console.error(JSON.stringify(error, null, 2));
-            
+
             return;
         }
 
@@ -57,8 +57,6 @@ const SignUp = () => {
                         console.log(session?.currentTask);
                         return;
                     }
-
-
 
                     const url = decorateUrl('/(tabs)');
                     if (url.startsWith('http')) {
