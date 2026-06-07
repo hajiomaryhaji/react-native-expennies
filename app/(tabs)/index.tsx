@@ -1,4 +1,4 @@
-import { Link } from "expo-router";
+
 import { styled } from "nativewind";
 import { FlatList, Image, Text, View } from "react-native";
 import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context";
