@@ -1,14 +1,11 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import {View, Text} from 'react-native'
 
-const onboarding = () => {
-  return (
-    <View className="flex-1 items-center justify-center bg-background">
-      <Text className="text-xl font-bold text-amber-500">
-        Oops! This is onboarding.
-      </Text>
-    </View>
-  )
+const Onboarding = () => {
+    return (
+        <View>
+            <Text>Onboarding</Text>
+        </View>
+    )
 }
 
-export default onboarding
+export default Onboarding
