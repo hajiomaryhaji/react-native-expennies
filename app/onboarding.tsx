@@ -1,14 +1,15 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { styled } from "nativewind"
+import { Text } from 'react-native'
+import { SafeAreaView as RNSafeAreaView } from 'react-native-safe-area-context'
 
-const onboarding = () => {
-  return (
-    <View className="flex-1 items-center justify-center bg-background">
-      <Text className="text-xl font-bold text-amber-500">
-        Oops! This is onboarding.
-      </Text>
-    </View>
-  )
+const SafeAreaView = styled(RNSafeAreaView);
+
+const Onboarding = () => {
+    return (
+        <SafeAreaView className="flex-1 bg-background p-5">
+            <Text>Onboarding</Text>
+        </SafeAreaView>
+    )
 }
 
-export default onboarding
+export default Onboarding
